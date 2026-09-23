@@ -24,15 +24,15 @@ desktop.ini
 .vscode/
 
 # Large and temporary data files
-data/raw/*.json
-data/raw/*.csv
-data/processed/*.csv
-data/processed/*.parquet
+Data/Raw/*.json
+Data/Raw/*.csv
+Data/Processed/*.csv
+Data/Processed/*.parquet
 
 # Power BI local files and backups
-powerbi/*.pbix
-powerbi/*.pbit
-powerbi/*.bak
+PowerBI/*.pbix
+PowerBI/*.pbit
+PowerBI/*.bak
 
 # Database files
 *.mdf
