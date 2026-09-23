@@ -1,0 +1,44 @@
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Python cache and test files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Environment variables and secrets
+.env
+*.env
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code workspace files
+.vscode/
+
+# Large and temporary data files
+data/raw/*.json
+data/raw/*.csv
+data/processed/*.csv
+data/processed/*.parquet
+
+# Power BI local files and backups
+powerbi/*.pbix
+powerbi/*.pbit
+powerbi/*.bak
+
+# Database files
+*.mdf
+*.ldf
+*.sqlite
+*.db
+
+# Log files
+*.log
