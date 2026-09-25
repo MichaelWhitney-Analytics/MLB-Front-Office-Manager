@@ -81,7 +81,7 @@ README.md
 
 ## Project Status
 
-**Current phase:** Four-page Power BI report completed; final repository documentation and validation in progress.
+**Current phase:** Project is complete. Documentation has been added and all report files have been uploaded.
 
 ## Limitations 
 
