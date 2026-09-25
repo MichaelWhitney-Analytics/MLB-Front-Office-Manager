@@ -45,7 +45,7 @@ The hitter and pitcher explorers include team selectors, need indicators, ranked
 
 Roster-fit scores are intended to make candidate comparisons transparent and repeatable. The report considers player performance alongside the selected team's needs and the player's position or pitching role.
 
-See [`roster_fit_methodology.md`](roster_fit_methodology.md) for the scoring definitions, eligibility criteria, assumptions, and limitations. The methodology document and scoring code—not this summary—should be the source of truth for exact weights and thresholds.
+See [`roster_fit_methodology.md`](Docs/roster_fit_methodology.md) for the scoring definitions, eligibility criteria, assumptions, and limitations. The methodology document and scoring code—not this summary—should be the source of truth for exact weights and thresholds.
 
 ## Technology Stack
 
