@@ -1,0 +1,31 @@
+team_id,team_name,team_abbreviation,team_code,file_code,location_name,franchise_name,club_name,first_year_of_play,active,league_id,league_name,division_id,division_name,venue_id,venue_name,season
+109,Arizona Diamondbacks,AZ,ari,ari,Phoenix,Arizona,Diamondbacks,1996,True,104,National League,203,National League West,15,Chase Field,2025
+133,Athletics,ATH,ath,ath,Sacramento,Athletics,Athletics,1901,True,103,American League,200,American League West,2529,Sutter Health Park,2025
+144,Atlanta Braves,ATL,atl,atl,Atlanta,Atlanta,Braves,1871,True,104,National League,204,National League East,4705,Truist Park,2025
+110,Baltimore Orioles,BAL,bal,bal,Baltimore,Baltimore,Orioles,1901,True,103,American League,201,American League East,2,Oriole Park at Camden Yards,2025
+111,Boston Red Sox,BOS,bos,bos,Boston,Boston,Red Sox,1901,True,103,American League,201,American League East,3,Fenway Park,2025
+112,Chicago Cubs,CHC,chn,chc,Chicago,Chicago,Cubs,1874,True,104,National League,205,National League Central,17,Wrigley Field,2025
+145,Chicago White Sox,CWS,cha,cws,Chicago,Chicago,White Sox,1901,True,103,American League,202,American League Central,4,Rate Field,2025
+113,Cincinnati Reds,CIN,cin,cin,Cincinnati,Cincinnati,Reds,1882,True,104,National League,205,National League Central,2602,Great American Ball Park,2025
+114,Cleveland Guardians,CLE,cle,cle,Cleveland,Cleveland,Guardians,1901,True,103,American League,202,American League Central,5,Progressive Field,2025
+115,Colorado Rockies,COL,col,col,Denver,Colorado,Rockies,1992,True,104,National League,203,National League West,19,Coors Field,2025
+116,Detroit Tigers,DET,det,det,Detroit,Detroit,Tigers,1901,True,103,American League,202,American League Central,2394,Comerica Park,2025
+117,Houston Astros,HOU,hou,hou,Houston,Houston,Astros,1962,True,103,American League,200,American League West,2392,Daikin Park,2025
+118,Kansas City Royals,KC,kca,kc,Kansas City,Kansas City,Royals,1968,True,103,American League,202,American League Central,7,Kauffman Stadium,2025
+108,Los Angeles Angels,LAA,ana,ana,Anaheim,Los Angeles,Angels,1961,True,103,American League,200,American League West,1,Angel Stadium,2025
+119,Los Angeles Dodgers,LAD,lan,la,Los Angeles,Los Angeles,Dodgers,1884,True,104,National League,203,National League West,22,Dodger Stadium,2025
+146,Miami Marlins,MIA,mia,mia,Miami,Miami,Marlins,1991,True,104,National League,204,National League East,4169,loanDepot park,2025
+158,Milwaukee Brewers,MIL,mil,mil,Milwaukee,Milwaukee,Brewers,1968,True,104,National League,205,National League Central,32,American Family Field,2025
+142,Minnesota Twins,MIN,min,min,Minneapolis,Minnesota,Twins,1901,True,103,American League,202,American League Central,3312,Target Field,2025
+121,New York Mets,NYM,nyn,nym,Flushing,New York,Mets,1962,True,104,National League,204,National League East,3289,Citi Field,2025
+147,New York Yankees,NYY,nya,nyy,Bronx,New York,Yankees,1903,True,103,American League,201,American League East,3313,Yankee Stadium,2025
+143,Philadelphia Phillies,PHI,phi,phi,Philadelphia,Philadelphia,Phillies,1883,True,104,National League,204,National League East,2681,Citizens Bank Park,2025
+134,Pittsburgh Pirates,PIT,pit,pit,Pittsburgh,Pittsburgh,Pirates,1882,True,104,National League,205,National League Central,31,PNC Park,2025
+135,San Diego Padres,SD,sdn,sd,San Diego,San Diego,Padres,1968,True,104,National League,203,National League West,2680,Petco Park,2025
+137,San Francisco Giants,SF,sfn,sf,San Francisco,San Francisco,Giants,1883,True,104,National League,203,National League West,2395,Oracle Park,2025
+136,Seattle Mariners,SEA,sea,sea,Seattle,Seattle,Mariners,1977,True,103,American League,200,American League West,680,T-Mobile Park,2025
+138,St. Louis Cardinals,STL,sln,stl,St. Louis,St. Louis,Cardinals,1892,True,104,National League,205,National League Central,2889,Busch Stadium,2025
+139,Tampa Bay Rays,TB,tba,tb,Tampa,Tampa Bay,Rays,1996,True,103,American League,201,American League East,2523,George M. Steinbrenner Field,2025
+140,Texas Rangers,TEX,tex,tex,Arlington,Texas,Rangers,1961,True,103,American League,200,American League West,5325,Globe Life Field,2025
+141,Toronto Blue Jays,TOR,tor,tor,Toronto,Toronto,Blue Jays,1977,True,103,American League,201,American League East,14,Rogers Centre,2025
+120,Washington Nationals,WSH,was,was,Washington,Washington,Nationals,1968,True,104,National League,204,National League East,3309,Nationals Park,2025

@@ -1,0 +1,160 @@
+table 'Dim Team'
+	lineageTag: 8858833d-ac90-41e4-aa43-e10ffb269d22
+
+	column team_id
+		dataType: int64
+		formatString: 0
+		lineageTag: c8ca13d9-62e0-4ed1-94d6-1247bf4d45c3
+		summarizeBy: none
+		sourceColumn: team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_name
+		dataType: string
+		lineageTag: 3021811b-4858-4dfb-837f-127bb14cc424
+		summarizeBy: none
+		sourceColumn: team_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_abbreviation
+		dataType: string
+		lineageTag: f169120b-a490-4904-83c5-beee854ecebc
+		summarizeBy: none
+		sourceColumn: team_abbreviation
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_code
+		dataType: string
+		lineageTag: dc48506d-3474-47c4-bf65-748d78ccd2ff
+		summarizeBy: none
+		sourceColumn: team_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column file_code
+		dataType: string
+		lineageTag: d27a4f6b-6dff-4676-8e35-bc3bd1accfe0
+		summarizeBy: none
+		sourceColumn: file_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_name
+		dataType: string
+		lineageTag: 6d980fcc-c19b-4fc6-bc3e-6089bc5428ce
+		summarizeBy: none
+		sourceColumn: location_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column franchise_name
+		dataType: string
+		lineageTag: e065aa3f-e5fe-4626-94b8-d98205dfff50
+		summarizeBy: none
+		sourceColumn: franchise_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column club_name
+		dataType: string
+		lineageTag: c5317b91-b758-4c5b-aac9-5b1067acef72
+		summarizeBy: none
+		sourceColumn: club_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_year_of_play
+		dataType: int64
+		formatString: 0
+		lineageTag: 151f2ddb-53d2-45e6-b1e9-2aa7cdec20b6
+		summarizeBy: sum
+		sourceColumn: first_year_of_play
+
+		annotation SummarizationSetBy = Automatic
+
+	column active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a988a0be-0e55-42a0-ab4f-965db608de39
+		summarizeBy: none
+		sourceColumn: active
+
+		annotation SummarizationSetBy = Automatic
+
+	column league_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 631225ca-7b42-4fef-9892-7fa601d97fb5
+		summarizeBy: sum
+		sourceColumn: league_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column league_name
+		dataType: string
+		lineageTag: f1a88a76-232c-4d9a-bcec-bbd9eb43a778
+		summarizeBy: none
+		sourceColumn: league_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 75b94730-33f8-461b-97ef-b3c5a6c6a105
+		summarizeBy: sum
+		sourceColumn: division_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_name
+		dataType: string
+		lineageTag: 1826f7c7-7921-4214-b7b5-11f8d7d73b63
+		summarizeBy: none
+		sourceColumn: division_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column venue_id
+		dataType: int64
+		formatString: 0
+		lineageTag: f3fe52e8-a4a2-447d-bdd2-de1af07b089f
+		summarizeBy: sum
+		sourceColumn: venue_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column venue_name
+		dataType: string
+		lineageTag: 87f9cb6d-e431-45b5-adb5-e4662eca1a84
+		summarizeBy: none
+		sourceColumn: venue_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column season
+		dataType: int64
+		formatString: 0
+		lineageTag: ca70ad48-df3a-4536-84e5-0c438344f7e5
+		summarizeBy: sum
+		sourceColumn: season
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim Team' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\mwhitney\OneDrive - ESI\Desktop\GitHubPersonal\MLB-Project\MLB-Front-Office-Manager\Data\Processed\dim_team_2025.csv"),[Delimiter=",", Columns=17, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"team_id", Int64.Type}, {"team_name", type text}, {"team_abbreviation", type text}, {"team_code", type text}, {"file_code", type text}, {"location_name", type text}, {"franchise_name", type text}, {"club_name", type text}, {"first_year_of_play", Int64.Type}, {"active", type logical}, {"league_id", Int64.Type}, {"league_name", type text}, {"division_id", Int64.Type}, {"division_name", type text}, {"venue_id", Int64.Type}, {"venue_name", type text}, {"season", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

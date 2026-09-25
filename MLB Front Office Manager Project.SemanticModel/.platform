@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "MLB Front Office Manager Project"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b32e9a02-4e1a-43a9-9c58-98838e337719"
+  }
+}

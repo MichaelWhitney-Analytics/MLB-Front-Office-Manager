@@ -1,0 +1,253 @@
+table 'Fact Team Position Needs'
+	lineageTag: a7e4b401-eda2-4fcc-9141-d47e4ebab86c
+
+	column team_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a4ccba77-7ed0-4ece-a125-f674e20e8993
+		summarizeBy: none
+		sourceColumn: team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_name
+		dataType: string
+		lineageTag: c3a57f8b-c588-4fcb-a3fe-0a312da2e44a
+		summarizeBy: none
+		sourceColumn: team_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_abbreviation
+		dataType: string
+		lineageTag: 531bbbfe-07f6-43cf-9dd6-ba97b32bcce9
+		summarizeBy: none
+		sourceColumn: team_abbreviation
+
+		annotation SummarizationSetBy = Automatic
+
+	column league_name
+		dataType: string
+		lineageTag: ec6da2b4-a18c-4757-b2f4-8e80a34d9a35
+		summarizeBy: none
+		sourceColumn: league_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_name
+		dataType: string
+		lineageTag: 43b5d566-f999-43b3-8997-faaef6ed40b5
+		summarizeBy: none
+		sourceColumn: division_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column position_group
+		dataType: string
+		lineageTag: 769c22b6-87bd-4bda-8927-5ab816aee5b0
+		summarizeBy: none
+		sourceColumn: position_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 86029229-cc50-44b9-aeec-8e5145bfb5e2
+		summarizeBy: sum
+		sourceColumn: player_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_plate_appearances
+		dataType: int64
+		formatString: 0
+		lineageTag: f1721a09-adf7-42ad-bd5e-06ab8ee70ee9
+		summarizeBy: sum
+		sourceColumn: total_plate_appearances
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_at_bats
+		dataType: int64
+		formatString: 0
+		lineageTag: 70998ba5-5c44-4e91-8c84-f6d1ab2c3a68
+		summarizeBy: sum
+		sourceColumn: total_at_bats
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_hits
+		dataType: int64
+		formatString: 0
+		lineageTag: 07475cbe-88d5-41d1-9e37-cf89dc8a1752
+		summarizeBy: sum
+		sourceColumn: total_hits
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_walks
+		dataType: int64
+		formatString: 0
+		lineageTag: 01b2c230-4f5d-4f4f-a8bd-287129f6974d
+		summarizeBy: sum
+		sourceColumn: total_walks
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_hit_by_pitch
+		dataType: int64
+		formatString: 0
+		lineageTag: 63a4a1c4-59ab-49a4-a98a-1b7adf0ba131
+		summarizeBy: sum
+		sourceColumn: total_hit_by_pitch
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_sacrifice_flies
+		dataType: int64
+		formatString: 0
+		lineageTag: e3e7e200-c89c-48dc-923c-a6cc4cebe450
+		summarizeBy: sum
+		sourceColumn: total_sacrifice_flies
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_bases
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b38aa55-281a-4474-ba08-4e9fac49fdfc
+		summarizeBy: sum
+		sourceColumn: total_bases
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_home_runs
+		dataType: int64
+		formatString: 0
+		lineageTag: bf588863-e3fe-44cf-bd3e-af9af5203c05
+		summarizeBy: sum
+		sourceColumn: total_home_runs
+
+		annotation SummarizationSetBy = Automatic
+
+	column position_obp
+		dataType: double
+		lineageTag: 81d9bfb8-464d-4ee0-8d42-bf3372a95659
+		summarizeBy: sum
+		sourceColumn: position_obp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column position_slg
+		dataType: double
+		lineageTag: 1d76a3bd-3d4a-42ef-84fb-84cad22b51dd
+		summarizeBy: sum
+		sourceColumn: position_slg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column position_ops
+		dataType: double
+		lineageTag: b65615e4-f221-492c-97c2-7a94443c6a78
+		summarizeBy: sum
+		sourceColumn: position_ops
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ops_need_component
+		dataType: double
+		lineageTag: fe639903-b134-42bf-9e94-baf14b5e7325
+		summarizeBy: sum
+		sourceColumn: ops_need_component
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column coverage_need_component
+		dataType: double
+		lineageTag: 5910cad8-6db6-44a2-bbf0-10f77595639c
+		summarizeBy: sum
+		sourceColumn: coverage_need_component
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column position_need_score
+		dataType: double
+		lineageTag: c3aee03c-5ac1-4e6a-aef4-4e7ad70acfb8
+		summarizeBy: sum
+		sourceColumn: position_need_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column position_need_level
+		dataType: string
+		lineageTag: 229af3c9-4241-4cb1-bd60-3ec0052e8dad
+		summarizeBy: none
+		sourceColumn: position_need_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column season
+		dataType: int64
+		formatString: 0
+		lineageTag: 175f6098-d67a-4d6c-9a3f-a91e070d4736
+		summarizeBy: sum
+		sourceColumn: season
+
+		annotation SummarizationSetBy = Automatic
+
+	column minimum_player_plate_appearances
+		dataType: int64
+		formatString: 0
+		lineageTag: 628e3921-5129-4985-8ac3-de653b4090b5
+		summarizeBy: sum
+		sourceColumn: minimum_player_plate_appearances
+
+		annotation SummarizationSetBy = Automatic
+
+	column ops_need_weight
+		dataType: double
+		lineageTag: 48f2611f-cf31-4b92-8d6b-1c0fb9700a9c
+		summarizeBy: sum
+		sourceColumn: ops_need_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column coverage_need_weight
+		dataType: double
+		lineageTag: f58cd4d9-8827-4ac6-9a55-61bbb48c7f41
+		summarizeBy: sum
+		sourceColumn: coverage_need_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Fact Team Position Needs' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\mwhitney\OneDrive - ESI\Desktop\GitHubPersonal\MLB-Project\MLB-Front-Office-Manager\Data\Processed\fact_team_position_needs_2025.csv"),[Delimiter=",", Columns=26, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"team_id", Int64.Type}, {"team_name", type text}, {"team_abbreviation", type text}, {"league_name", type text}, {"division_name", type text}, {"position_group", type text}, {"player_count", Int64.Type}, {"total_plate_appearances", Int64.Type}, {"total_at_bats", Int64.Type}, {"total_hits", Int64.Type}, {"total_walks", Int64.Type}, {"total_hit_by_pitch", Int64.Type}, {"total_sacrifice_flies", Int64.Type}, {"total_bases", Int64.Type}, {"total_home_runs", Int64.Type}, {"position_obp", type number}, {"position_slg", type number}, {"position_ops", type number}, {"ops_need_component", type number}, {"coverage_need_component", type number}, {"position_need_score", type number}, {"position_need_level", type text}, {"season", Int64.Type}, {"minimum_player_plate_appearances", Int64.Type}, {"ops_need_weight", type number}, {"coverage_need_weight", type number}})
+				in
+				    #"Changed Type"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

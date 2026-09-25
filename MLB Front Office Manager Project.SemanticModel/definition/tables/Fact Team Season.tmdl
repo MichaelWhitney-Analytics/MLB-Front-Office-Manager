@@ -1,0 +1,265 @@
+table 'Fact Team Season'
+	lineageTag: 225627aa-cd95-498f-8a7a-bf29146fed30
+
+	measure 'Team Record' =
+			
+			VAR Wins =
+			    SELECTEDVALUE ( 'Fact Team Season'[wins] )
+			VAR Losses =
+			    SELECTEDVALUE ( 'Fact Team Season'[losses] )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( Wins )
+			            && NOT ISBLANK ( Losses ),
+			        FORMAT ( Wins, "0" ) & "–" & FORMAT ( Losses, "0" ),
+			        "Select one team"
+			    )
+		lineageTag: 4acd9281-b1fb-4588-a327-45a57e02e737
+
+	measure 'Offensive Need Score' =
+			
+			SELECTEDVALUE ( 'Fact Team Needs'[offensive_need_score] )
+		lineageTag: ab949778-0392-444e-9224-2061eaad17c5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Starting Pitching Need Score' =
+			
+			SELECTEDVALUE ( 'Fact Team Needs'[starting_pitching_need_score] )
+		lineageTag: 200d351f-5032-4303-83e4-80bf4511fcd1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Bullpen Need Score' =
+			
+			SELECTEDVALUE ( 'Fact Team Needs'[bullpen_need_score] )
+		lineageTag: c5e12637-06f5-4b44-b592-c1615929e236
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column team_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 93e27dfb-35d5-4851-b463-fd65a2b519a2
+		summarizeBy: none
+		sourceColumn: team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_name
+		dataType: string
+		lineageTag: 8b86a694-3f45-49a1-bb7f-dfe9cf62f36c
+		summarizeBy: none
+		sourceColumn: team_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column season
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ff73208-2156-4009-974b-a8522d46ea59
+		summarizeBy: sum
+		sourceColumn: season
+
+		annotation SummarizationSetBy = Automatic
+
+	column league_id
+		dataType: int64
+		formatString: 0
+		lineageTag: df20bf67-b697-46d5-b6ff-8180bb588256
+		summarizeBy: sum
+		sourceColumn: league_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column league_name
+		dataType: string
+		lineageTag: b2c9cdeb-7905-41b8-840e-f06f94fd3556
+		summarizeBy: none
+		sourceColumn: league_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 93e71ec8-7e21-4480-bedd-678ca2a1c5e3
+		summarizeBy: sum
+		sourceColumn: division_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_name
+		dataType: string
+		lineageTag: caa83abd-ea1f-4573-ba06-88a083bea399
+		summarizeBy: none
+		sourceColumn: division_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column games_played
+		dataType: int64
+		formatString: 0
+		lineageTag: 28625858-5684-4781-ae64-2e492578c6ec
+		summarizeBy: sum
+		sourceColumn: games_played
+
+		annotation SummarizationSetBy = Automatic
+
+	column wins
+		dataType: int64
+		formatString: 0
+		lineageTag: 757b6297-b548-44ed-8085-b06369f1c29c
+		summarizeBy: sum
+		sourceColumn: wins
+
+		annotation SummarizationSetBy = Automatic
+
+	column losses
+		dataType: int64
+		formatString: 0
+		lineageTag: df2504d7-d800-4ca2-bfb8-30c41d3740f4
+		summarizeBy: sum
+		sourceColumn: losses
+
+		annotation SummarizationSetBy = Automatic
+
+	column winning_percentage
+		dataType: double
+		lineageTag: e11e501b-d513-411e-bfd3-489b8bc9144f
+		summarizeBy: sum
+		sourceColumn: winning_percentage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column games_back
+		dataType: int64
+		formatString: 0
+		lineageTag: fbd8987a-3cbd-47d3-b3f5-4f903d4c4183
+		summarizeBy: sum
+		sourceColumn: games_back
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 7bb41035-9687-471e-aa5f-299ec9b63d79
+		summarizeBy: sum
+		sourceColumn: division_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_champ
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 85322f66-aa5f-44f1-bbdb-0fa3d2d8c702
+		summarizeBy: none
+		sourceColumn: division_champ
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_leader
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 37c6d66c-a957-4a02-a6ea-faf6e5899909
+		summarizeBy: none
+		sourceColumn: division_leader
+
+		annotation SummarizationSetBy = Automatic
+
+	column wild_card_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: cff69468-3294-4bf6-a692-7770dcde3c45
+		summarizeBy: sum
+		sourceColumn: wild_card_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column wild_card_games_back
+		dataType: int64
+		formatString: 0
+		lineageTag: 53f655e6-d296-4564-918c-8b7f23d37b27
+		summarizeBy: sum
+		sourceColumn: wild_card_games_back
+
+		annotation SummarizationSetBy = Automatic
+
+	column runs_scored
+		dataType: int64
+		formatString: 0
+		lineageTag: 86663397-7abd-413f-83b9-8c16d3f1e669
+		summarizeBy: sum
+		sourceColumn: runs_scored
+
+		annotation SummarizationSetBy = Automatic
+
+	column runs_allowed
+		dataType: int64
+		formatString: 0
+		lineageTag: 8ef83991-f36c-41fc-8e79-dea28df68fea
+		summarizeBy: sum
+		sourceColumn: runs_allowed
+
+		annotation SummarizationSetBy = Automatic
+
+	column run_differential
+		dataType: int64
+		formatString: 0
+		lineageTag: f88b5939-cb05-4232-b93c-94a28b2134fb
+		summarizeBy: sum
+		sourceColumn: run_differential
+
+		annotation SummarizationSetBy = Automatic
+
+	column elimination_number
+		dataType: string
+		lineageTag: b9ca07ab-a5c6-419a-b128-fc304bccea89
+		summarizeBy: none
+		sourceColumn: elimination_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column wild_card_elimination_number
+		dataType: int64
+		formatString: 0
+		lineageTag: def2cae7-e7be-4831-b209-999046e221c4
+		summarizeBy: sum
+		sourceColumn: wild_card_elimination_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column clinched
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 87a4ea9a-90f0-4fbe-8ac9-80a4ca6088cf
+		summarizeBy: none
+		sourceColumn: clinched
+
+		annotation SummarizationSetBy = Automatic
+
+	column clinch_indicator
+		dataType: string
+		lineageTag: 260c2023-d77b-4910-9cff-f4a3991506d1
+		summarizeBy: none
+		sourceColumn: clinch_indicator
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact Team Season' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\mwhitney\OneDrive - ESI\Desktop\GitHubPersonal\MLB-Project\MLB-Front-Office-Manager\Data\Processed\fact_team_season_2025.csv"),[Delimiter=",", Columns=24, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"team_id", Int64.Type}, {"team_name", type text}, {"season", Int64.Type}, {"league_id", Int64.Type}, {"league_name", type text}, {"division_id", Int64.Type}, {"division_name", type text}, {"games_played", Int64.Type}, {"wins", Int64.Type}, {"losses", Int64.Type}, {"winning_percentage", type number}, {"games_back", Int64.Type}, {"division_rank", Int64.Type}, {"division_champ", type logical}, {"division_leader", type logical}, {"wild_card_rank", Int64.Type}, {"wild_card_games_back", Int64.Type}, {"runs_scored", Int64.Type}, {"runs_allowed", Int64.Type}, {"run_differential", Int64.Type}, {"elimination_number", type text}, {"wild_card_elimination_number", Int64.Type}, {"clinched", type logical}, {"clinch_indicator", type text}})
+				in
+				    #"Changed Type"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

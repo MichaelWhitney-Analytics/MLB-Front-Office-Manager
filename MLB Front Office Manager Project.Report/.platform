@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "MLB Front Office Manager Project"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6b863eb4-76ed-4c50-9ca2-99673b0827b5"
+  }
+}

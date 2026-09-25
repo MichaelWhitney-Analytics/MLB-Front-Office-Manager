@@ -1,0 +1,822 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "ff5e2898bc1112972875",
+  "position": {
+    "x": 0,
+    "y": 330.02816499696956,
+    "z": 6000,
+    "height": 750.59503012585117,
+    "width": 1079.16289350779,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact Hitter Roster Fit"
+                    }
+                  },
+                  "Property": "player_name"
+                }
+              },
+              "queryRef": "Fact Hitter Roster Fit.player_name",
+              "nativeQueryRef": "Player Name",
+              "displayName": "Player Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact Hitter Roster Fit"
+                    }
+                  },
+                  "Property": "player_source_team_name"
+                }
+              },
+              "queryRef": "Fact Hitter Roster Fit.player_source_team_name",
+              "nativeQueryRef": "Player Current Team",
+              "displayName": "Player Current Team"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact Hitter Roster Fit"
+                    }
+                  },
+                  "Property": "player_position_name"
+                }
+              },
+              "queryRef": "Fact Hitter Roster Fit.player_position_name",
+              "nativeQueryRef": "Player Position",
+              "displayName": "Player Position"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact Hitter Roster Fit"
+                        }
+                      },
+                      "Property": "player_batting_average"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact Hitter Roster Fit.player_batting_average)",
+              "nativeQueryRef": "BA",
+              "displayName": "BA",
+              "format": "0.000"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact Hitter Roster Fit"
+                        }
+                      },
+                      "Property": "player_ops"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact Hitter Roster Fit.player_ops)",
+              "nativeQueryRef": "OPS",
+              "displayName": "OPS"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact Hitter Roster Fit"
+                        }
+                      },
+                      "Property": "player_home_runs"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact Hitter Roster Fit.player_home_runs)",
+              "nativeQueryRef": "HR's",
+              "displayName": "HR's"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact Hitter Roster Fit"
+                        }
+                      },
+                      "Property": "player_runs_batted_in"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact Hitter Roster Fit.player_runs_batted_in)",
+              "nativeQueryRef": "RBI's",
+              "displayName": "RBI's"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact Hitter Roster Fit"
+                        }
+                      },
+                      "Property": "player_plate_appearances"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact Hitter Roster Fit.player_plate_appearances)",
+              "nativeQueryRef": "PA's",
+              "displayName": "PA's"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact Hitter Roster Fit"
+                        }
+                      },
+                      "Property": "roster_fit_score"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact Hitter Roster Fit.roster_fit_score)",
+              "nativeQueryRef": "Roster Fit Score",
+              "displayName": "Roster Fit Score"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact Hitter Roster Fit"
+                    }
+                  },
+                  "Property": "fit_tier"
+                }
+              },
+              "queryRef": "Fact Hitter Roster Fit.fit_tier",
+              "nativeQueryRef": "Fit Tier",
+              "displayName": "Fit Tier"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Fact Hitter Roster Fit"
+                      }
+                    },
+                    "Property": "roster_fit_score"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "159.28542995131204D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact Hitter Roster Fit.player_name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "117.58693580928306D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact Hitter Roster Fit.fit_tier"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "63.60301515421433D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Hitter Roster Fit.player_batting_average)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "60.983936606422255D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Hitter Roster Fit.player_ops)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "61.06333069059323D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Hitter Roster Fit.player_home_runs)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "66.98392055476761D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Hitter Roster Fit.player_runs_batted_in)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "56.60301556925351D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Hitter Roster Fit.player_plate_appearances)"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Hitter Roster Fit.player_batting_average)"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Hitter Roster Fit.player_ops)"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Hitter Roster Fit.player_home_runs)"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Hitter Roster Fit.player_runs_batted_in)"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Hitter Roster Fit.player_plate_appearances)"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Hitter Roster Fit.roster_fit_score)"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top External Candidates for Highest-Need Position'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e47d0487daad70339867",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact Hitter Roster Fit"
+              }
+            },
+            "Property": "fit_tier"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f129ea5b249e093691c7",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact Hitter Roster Fit"
+              }
+            },
+            "Property": "player_name"
+          }
+        },
+        "type": "TopN"
+      },
+      {
+        "name": "4bb3ff1f099647b70d8a",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact Hitter Roster Fit"
+              }
+            },
+            "Property": "player_position_name"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "64ae5ea8e80aa26ed080",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact Hitter Roster Fit"
+              }
+            },
+            "Property": "player_source_team_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f3ec1454b7d7ddd713ce",
+        "ordinal": 4,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact Hitter Roster Fit"
+                  }
+                },
+                "Property": "player_ops"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e13ba4e03469bc411d7c",
+        "ordinal": 5,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact Hitter Roster Fit"
+                  }
+                },
+                "Property": "player_plate_appearances"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "834493cc61d473e6736d",
+        "ordinal": 6,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact Hitter Roster Fit"
+                  }
+                },
+                "Property": "roster_fit_score"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bb82a7b0eb7967330de1",
+        "ordinal": 7,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact Hitter Roster Fit"
+                  }
+                },
+                "Property": "target_position_need_score"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "d0d65cf2051117b8e655",
+        "ordinal": 8,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact Hitter Roster Fit"
+              }
+            },
+            "Property": "Show Highest Need Position Candidate"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "Fact Hitter Roster Fit",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "f"
+                        }
+                      },
+                      "Property": "Show Highest Need Position Candidate"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "1L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "d70799f920274906bac8",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact Hitter Roster Fit"
+                  }
+                },
+                "Property": "player_batting_average"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d9897ccb750180252339",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact Hitter Roster Fit"
+                  }
+                },
+                "Property": "player_runs_batted_in"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "cedef6ab5000109014dd",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact Hitter Roster Fit"
+                  }
+                },
+                "Property": "player_home_runs"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  }
+}

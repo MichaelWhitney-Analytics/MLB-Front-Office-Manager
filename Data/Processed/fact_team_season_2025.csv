@@ -1,0 +1,31 @@
+team_id,team_name,season,league_id,league_name,division_id,division_name,games_played,wins,losses,winning_percentage,games_back,division_rank,division_champ,division_leader,wild_card_rank,wild_card_games_back,runs_scored,runs_allowed,run_differential,elimination_number,wild_card_elimination_number,clinched,clinch_indicator
+141,Blue Jays,2025,103,,201,,162,94,68,0.58,,1,True,True,,,798,721,77,,,True,z
+114,Guardians,2025,103,,202,,162,88,74,0.543,,1,True,True,,,643,649,-6,,,True,y
+136,Mariners,2025,103,,200,,162,90,72,0.556,,1,True,True,,,766,694,72,,,True,y
+143,Phillies,2025,104,,204,,162,96,66,0.593,,1,True,True,,,778,648,130,,,True,y
+158,Brewers,2025,104,,205,,162,97,65,0.599,,1,True,True,,,806,634,172,,,True,z
+119,Dodgers,2025,104,,203,,162,93,69,0.574,,1,True,True,,,825,683,142,,,True,y
+147,Yankees,2025,103,,201,,162,94,68,0.58,,2,False,False,1.0,7.0,849,685,164,,,True,w
+116,Tigers,2025,103,,202,,162,87,75,0.537,1.0,2,False,False,3.0,,758,691,67,,,True,w
+117,Astros,2025,103,,200,,162,87,75,0.537,3.0,2,False,False,4.0,,686,665,21,,1.0,False,
+121,Mets,2025,104,,204,,162,83,79,0.512,13.0,2,False,False,4.0,,766,715,51,,1.0,False,
+112,Cubs,2025,104,,205,,162,92,70,0.568,5.0,2,False,False,1.0,9.0,793,649,144,,,True,w
+135,Padres,2025,104,,203,,162,90,72,0.556,3.0,2,False,False,2.0,7.0,702,621,81,,,True,w
+111,Red Sox,2025,103,,201,,162,89,73,0.549,5.0,3,False,False,2.0,2.0,786,676,110,,,True,w
+118,Royals,2025,103,,202,,162,82,80,0.506,6.0,3,False,False,5.0,5.0,651,637,14,,,False,
+140,Rangers,2025,103,,200,,162,81,81,0.5,9.0,3,False,False,6.0,6.0,684,605,79,,,False,
+146,Marlins,2025,104,,204,,162,79,83,0.488,17.0,3,False,False,7.0,4.0,709,798,-89,,,False,
+113,Reds,2025,104,,205,,162,83,79,0.512,14.0,3,False,False,3.0,,716,681,35,,,True,w
+137,Giants,2025,104,,203,,162,81,81,0.5,12.0,3,False,False,5.0,2.0,705,684,21,,,False,
+139,Rays,2025,103,,201,,162,77,85,0.475,17.0,4,False,False,7.0,10.0,714,683,31,,,False,
+142,Twins,2025,103,,202,,162,70,92,0.432,18.0,4,False,False,11.0,17.0,678,773,-95,,,False,
+133,Athletics,2025,103,,200,,162,76,86,0.469,14.0,4,False,False,8.0,11.0,733,817,-84,,,False,
+144,Braves,2025,104,,204,,162,76,86,0.469,20.0,4,False,False,9.0,7.0,724,734,-10,,,False,
+138,Cardinals,2025,104,,205,,162,78,84,0.481,19.0,4,False,False,8.0,5.0,689,754,-65,,,False,
+109,D-backs,2025,104,,203,,162,80,82,0.494,13.0,4,False,False,6.0,3.0,791,785,6,,,False,
+110,Orioles,2025,103,,201,,162,75,87,0.463,19.0,5,False,False,9.0,12.0,677,788,-111,,,False,
+145,White Sox,2025,103,,202,,162,60,102,0.37,28.0,5,False,False,12.0,27.0,647,742,-95,,,False,
+108,Angels,2025,103,,200,,162,72,90,0.444,18.0,5,False,False,10.0,15.0,673,837,-164,,,False,
+120,Nationals,2025,104,,204,,162,66,96,0.407,30.0,5,False,False,11.0,17.0,687,899,-212,,,False,
+134,Pirates,2025,104,,205,,162,71,91,0.438,26.0,5,False,False,10.0,12.0,583,645,-62,,,False,
+115,Rockies,2025,104,,203,,162,43,119,0.265,50.0,5,False,False,12.0,40.0,597,1021,-424,,,False,

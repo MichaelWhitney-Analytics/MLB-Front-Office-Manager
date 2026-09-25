@@ -1,44 +1,20 @@
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Power BI binary files and local backups
+*.pbix
+*.pbit
+*.bak
+
 # Python virtual environments
 .venv/
 venv/
-env/
-
-# Python cache and test files
 __pycache__/
 *.py[cod]
-.pytest_cache/
 
-# Environment variables and secrets
-.env
-*.env
-
-# Jupyter notebook checkpoints
+# Jupyter checkpoints
 .ipynb_checkpoints/
 
-# Operating system files
+# Operating-system files
 .DS_Store
 Thumbs.db
-desktop.ini
-
-# VS Code workspace files
-.vscode/
-
-# Large and temporary data files
-Data/Raw/*.json
-Data/Raw/*.csv
-Data/Processed/*.csv
-Data/Processed/*.parquet
-
-# Power BI local files and backups
-PowerBI/*.pbix
-PowerBI/*.pbit
-PowerBI/*.bak
-
-# Database files
-*.mdf
-*.ldf
-*.sqlite
-*.db
-
-# Log files
-*.log

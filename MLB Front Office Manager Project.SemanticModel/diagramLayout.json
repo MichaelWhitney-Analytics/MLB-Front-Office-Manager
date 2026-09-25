@@ -1,0 +1,126 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 8.6956521739130039
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 927.536231884058,
+            "y": 334.78260869565213
+          },
+          "nodeIndex": "Dim Team",
+          "nodeLineageTag": "8858833d-ac90-41e4-aa43-e10ffb269d22",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 918.78260869565247,
+            "y": 0
+          },
+          "nodeIndex": "Fact Team Season",
+          "nodeLineageTag": "225627aa-cd95-498f-8a7a-bf29146fed30",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1241.913043478261,
+            "y": 344.92753623188406
+          },
+          "nodeIndex": "Fact Team Needs",
+          "nodeLineageTag": "70025919-535b-488e-b881-9232a5b4c574",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1244.753623188406,
+            "y": 660.86956521739125
+          },
+          "nodeIndex": "Fact Team Position Needs",
+          "nodeLineageTag": "a7e4b401-eda2-4fcc-9141-d47e4ebab86c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 659.18840579710138,
+            "y": 334.7826086956523
+          },
+          "nodeIndex": "Fact Batting Player Team Season",
+          "nodeLineageTag": "dc532583-9cef-49dc-bd0d-6d69c4aeecce",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 653.33333333333326,
+            "y": 656.52173913043464
+          },
+          "nodeIndex": "Fact Pitching Player Team Season",
+          "nodeLineageTag": "a1ff0627-8d8b-459a-ae6b-e33e3d5e16ed",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1001.1014492753623,
+            "y": 989.85507246376824
+          },
+          "nodeIndex": "Fact Hitter Roster Fit",
+          "nodeLineageTag": "d6b24a8c-eb28-4f37-ae11-2fccc91168e6",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1366.2608695652173,
+            "y": 984.05797101449275
+          },
+          "nodeIndex": "Fact Pitcher Roster Fit",
+          "nodeLineageTag": "adf8576a-f2b4-43a2-bb0d-be5a699da66f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 69,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

@@ -1,0 +1,437 @@
+table 'Fact Hitter Roster Fit'
+	lineageTag: d6b24a8c-eb28-4f37-ae11-2fccc91168e6
+
+	measure 'Hitter Fit Target Team' =
+			
+			SELECTEDVALUE (
+			    'Fact Hitter Roster Fit'[target_team_name],
+			    "Select one team"
+			)
+		lineageTag: 668f25e9-1646-43dd-8d83-b5898769260a
+
+	measure 'Hitter Fit Offensive Need' =
+			
+			SELECTEDVALUE (
+			    'Fact Hitter Roster Fit'[target_offensive_need_score]
+			)
+		lineageTag: af9be448-84a4-4d9a-a0f4-d1b9cc26ec0d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Hitter Fit Overall Need' =
+			
+			SELECTEDVALUE (
+			    'Fact Hitter Roster Fit'[target_overall_need_score]
+			)
+		lineageTag: f2a76ed1-f3cc-4305-a92c-25bf1e5011ff
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Highest Hitter Position Need' =
+			
+			VAR TopNeedRow =
+			    TOPN (
+			        1,
+			        FILTER (
+			            'Fact Team Position Needs',
+			            'Fact Team Position Needs'[team_id]
+			                = SELECTEDVALUE ( 'Dim Team'[team_id] )
+			        ),
+			        'Fact Team Position Needs'[position_need_score],
+			        DESC
+			    )
+			RETURN
+			    MAXX ( TopNeedRow, 'Fact Team Position Needs'[position_group] )
+		lineageTag: 8909d11d-1f0b-45af-8f12-0a2943a2746c
+
+	measure 'Show Highest Need Position Candidate' =
+			
+			VAR HighestNeedPosition =
+			    CALCULATE (
+			        [Highest Hitter Position Need],
+			        REMOVEFILTERS ( 'Fact Hitter Roster Fit'[player_position_name] )
+			    )
+			VAR CandidatePosition =
+			    SELECTEDVALUE ( 'Fact Hitter Roster Fit'[player_position_name] )
+			RETURN
+			    IF ( CandidatePosition = HighestNeedPosition, 1, 0 )
+		formatString: 0
+		lineageTag: 13d05942-0b48-4c9a-9e04-82ba7144846d
+
+	measure 'Fit Tier Color' =
+			
+			VAR CurrentFitTier =
+			    SELECTEDVALUE ( 'Fact Hitter Roster Fit'[fit_tier] )
+			RETURN
+			    SWITCH (
+			        CurrentFitTier,
+			        "Excellent Fit", "#0B2E59",
+			        "Strong Fit", "#3F6FA6",
+			        "Moderate Fit", "#A9C5E8",
+			        "#D9E2F3"
+			    )
+		lineageTag: 2ca0279f-e3f2-4ce1-926b-52c0b7e62141
+
+	column player_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 7fb33aba-bbd7-4fd2-a00d-3c9a5af109a6
+		summarizeBy: sum
+		sourceColumn: player_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_name
+		dataType: string
+		lineageTag: a18842c6-461b-4045-940a-f02063802d46
+		summarizeBy: none
+		sourceColumn: player_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column season
+		dataType: int64
+		formatString: 0
+		lineageTag: 15dd05d1-d074-48a0-93e1-a1a7e36d3799
+		summarizeBy: sum
+		sourceColumn: season
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_source_team_id
+		dataType: int64
+		formatString: 0
+		lineageTag: f1b2ffad-2f02-42c6-a754-b4299a1d2e60
+		summarizeBy: sum
+		sourceColumn: player_source_team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_source_team_name
+		dataType: string
+		lineageTag: e28615cf-b54e-4cd0-a89f-617e158205e9
+		summarizeBy: none
+		sourceColumn: player_source_team_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_position_code
+		dataType: int64
+		formatString: 0
+		lineageTag: e0811604-873a-403c-9ad8-02120dde1412
+		summarizeBy: sum
+		sourceColumn: player_position_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_position_name
+		dataType: string
+		lineageTag: f0f7d985-7e38-4d4d-bb8b-3931cea1e5c8
+		summarizeBy: none
+		sourceColumn: player_position_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column position_group
+		dataType: string
+		lineageTag: a68e3969-cebd-4f05-be58-65ac7d7a51cd
+		summarizeBy: none
+		sourceColumn: position_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_plate_appearances
+		dataType: int64
+		formatString: 0
+		lineageTag: 9508ed10-aa78-4619-a85b-661a2559f29d
+		summarizeBy: sum
+		sourceColumn: player_plate_appearances
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_batting_average
+		dataType: double
+		lineageTag: 8d3939f4-b25e-418b-ba8d-a8aa8ebbc5ca
+		summarizeBy: sum
+		sourceColumn: player_batting_average
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column player_on_base_percentage
+		dataType: double
+		lineageTag: 040b611a-5334-4080-bcc3-9c311b0e051d
+		summarizeBy: sum
+		sourceColumn: player_on_base_percentage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column player_slugging_percentage
+		dataType: double
+		lineageTag: 850509f1-682e-4c50-bd4d-325abd559a69
+		summarizeBy: sum
+		sourceColumn: player_slugging_percentage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column player_ops
+		dataType: double
+		lineageTag: 237c190c-2392-4a49-8ec5-e400a2a4b685
+		summarizeBy: sum
+		sourceColumn: player_ops
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column player_home_runs
+		dataType: int64
+		formatString: 0
+		lineageTag: 60b0f793-617d-491d-ad23-a72da50ff42a
+		summarizeBy: sum
+		sourceColumn: player_home_runs
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_runs_batted_in
+		dataType: int64
+		formatString: 0
+		lineageTag: 861a177a-e95f-4757-a390-b8919499e892
+		summarizeBy: sum
+		sourceColumn: player_runs_batted_in
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_performance_score
+		dataType: double
+		lineageTag: 90126494-3d45-4ffe-b4e6-db75236ddaf2
+		summarizeBy: sum
+		sourceColumn: player_performance_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column playing_time_score
+		dataType: double
+		lineageTag: 2a5322c1-e7ce-40d2-ba3d-293dc128928e
+		summarizeBy: sum
+		sourceColumn: playing_time_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column target_team_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 2344e852-71b4-4539-8801-1a754e352b5d
+		summarizeBy: none
+		sourceColumn: target_team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_team_name
+		dataType: string
+		lineageTag: 548f7761-9a77-4290-9c4c-474a343be4ac
+		summarizeBy: none
+		sourceColumn: target_team_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_team_abbreviation
+		dataType: string
+		lineageTag: 1073b8d2-7c77-4445-bd50-2e662de2d1d8
+		summarizeBy: none
+		sourceColumn: target_team_abbreviation
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_league_name
+		dataType: string
+		lineageTag: 26194235-1594-4495-aaee-ab5d9bf972ab
+		summarizeBy: none
+		sourceColumn: target_league_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_division_name
+		dataType: string
+		lineageTag: d384aaa8-5a1e-4e66-a3d4-9491627f7cec
+		summarizeBy: none
+		sourceColumn: target_division_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_offensive_need_score
+		dataType: double
+		lineageTag: 6472c1f1-a856-4554-9f66-05c4d6907ae3
+		summarizeBy: sum
+		sourceColumn: target_offensive_need_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column target_offensive_need_level
+		dataType: string
+		lineageTag: 324a8d92-d362-4ba3-b360-e37b5a00b1be
+		summarizeBy: none
+		sourceColumn: target_offensive_need_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_overall_need_score
+		dataType: double
+		lineageTag: 7364bdb0-aadd-46ea-ab90-f47999d13b94
+		summarizeBy: sum
+		sourceColumn: target_overall_need_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column target_overall_need_level
+		dataType: string
+		lineageTag: 1a0f5624-e93b-49f8-abdf-d15a64a4b530
+		summarizeBy: none
+		sourceColumn: target_overall_need_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_primary_need
+		dataType: string
+		lineageTag: 5198ff60-8d13-4ed0-8f6b-ded5009cda65
+		summarizeBy: none
+		sourceColumn: target_primary_need
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_position_need_score
+		dataType: double
+		lineageTag: f148463e-f237-4ef4-b3aa-d40166bceee1
+		summarizeBy: sum
+		sourceColumn: target_position_need_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column target_position_need_level
+		dataType: string
+		lineageTag: 73b68e27-bf63-4f39-bb55-e96d44407ddc
+		summarizeBy: none
+		sourceColumn: target_position_need_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_on_target_team
+		dataType: string
+		lineageTag: e1b39312-12dd-4759-be7d-0c8ad8bd4e6a
+		summarizeBy: none
+		sourceColumn: player_on_target_team
+
+		annotation SummarizationSetBy = Automatic
+
+	column roster_fit_score
+		dataType: double
+		lineageTag: a41d19b9-625b-4d5f-ad83-b3630c344406
+		summarizeBy: sum
+		sourceColumn: roster_fit_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fit_tier
+		dataType: string
+		lineageTag: 43dba3e2-4c48-4235-aee1-039b7a43f0a4
+		summarizeBy: none
+		sourceColumn: fit_tier
+
+		annotation SummarizationSetBy = Automatic
+
+	column position_alignment_status
+		dataType: string
+		lineageTag: 4e1efe7b-5479-459c-922c-e289d50369ff
+		summarizeBy: none
+		sourceColumn: position_alignment_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column fit_explanation
+		dataType: string
+		lineageTag: 8d436b74-81dd-475d-a5ca-a487dcf40c3a
+		summarizeBy: none
+		sourceColumn: fit_explanation
+
+		annotation SummarizationSetBy = Automatic
+
+	column minimum_candidate_plate_appearances
+		dataType: int64
+		formatString: 0
+		lineageTag: 89361e11-14f1-4600-978c-89c41b396fb2
+		summarizeBy: sum
+		sourceColumn: minimum_candidate_plate_appearances
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_performance_weight
+		dataType: double
+		lineageTag: 29fd1aaf-5660-45e4-b47a-faaab7d981f6
+		summarizeBy: sum
+		sourceColumn: player_performance_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column team_offensive_need_weight
+		dataType: double
+		lineageTag: a321dbd6-03a3-4ed2-be36-83d4a9edd0a7
+		summarizeBy: sum
+		sourceColumn: team_offensive_need_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column position_need_weight
+		dataType: double
+		lineageTag: e4ab16d5-1da2-4037-bfb2-335507cb0069
+		summarizeBy: sum
+		sourceColumn: position_need_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column playing_time_weight
+		dataType: double
+		lineageTag: 26036a03-d0bb-46d8-8467-e1e0dc4303bd
+		summarizeBy: sum
+		sourceColumn: playing_time_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Fact Hitter Roster Fit' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\mwhitney\OneDrive - ESI\Desktop\GitHubPersonal\MLB-Project\MLB-Front-Office-Manager\Data\Processed\fact_hitter_roster_fit_v2_2025.csv"),[Delimiter=",", Columns=39, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"player_id", Int64.Type}, {"player_name", type text}, {"season", Int64.Type}, {"player_source_team_id", Int64.Type}, {"player_source_team_name", type text}, {"player_position_code", Int64.Type}, {"player_position_name", type text}, {"position_group", type text}, {"player_plate_appearances", Int64.Type}, {"player_batting_average", type number}, {"player_on_base_percentage", type number}, {"player_slugging_percentage", type number}, {"player_ops", type number}, {"player_home_runs", Int64.Type}, {"player_runs_batted_in", Int64.Type}, {"player_performance_score", type number}, {"playing_time_score", type number}, {"target_team_id", Int64.Type}, {"target_team_name", type text}, {"target_team_abbreviation", type text}, {"target_league_name", type text}, {"target_division_name", type text}, {"target_offensive_need_score", type number}, {"target_offensive_need_level", type text}, {"target_overall_need_score", type number}, {"target_overall_need_level", type text}, {"target_primary_need", type text}, {"target_position_need_score", type number}, {"target_position_need_level", type text}, {"player_on_target_team", type text}, {"roster_fit_score", type number}, {"fit_tier", type text}, {"position_alignment_status", type text}, {"fit_explanation", type text}, {"minimum_candidate_plate_appearances", Int64.Type}, {"player_performance_weight", type number}, {"team_offensive_need_weight", type number}, {"position_need_weight", type number}, {"playing_time_weight", type number}})
+				in
+				    #"Changed Type"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

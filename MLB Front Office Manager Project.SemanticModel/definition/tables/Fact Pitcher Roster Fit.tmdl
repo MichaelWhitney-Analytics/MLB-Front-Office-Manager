@@ -1,0 +1,503 @@
+table 'Fact Pitcher Roster Fit'
+	lineageTag: adf8576a-f2b4-43a2-bb0d-be5a699da66f
+
+	measure 'Pitcher Fit Target Team' =
+			
+			SELECTEDVALUE (
+			    'Fact Pitcher Roster Fit'[target_team_name],
+			    "Select one team"
+			)
+		lineageTag: 5dec599b-a12d-4090-9a73-e8800d8e908c
+
+	measure 'Pitcher Fit Overall Need' =
+			
+			SELECTEDVALUE (
+			    'Fact Pitcher Roster Fit'[target_overall_need_score]
+			)
+		lineageTag: 4424dad6-13b3-4c35-a566-90b6ebb98227
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Pitcher Fit Starting Pitching Need' =
+			
+			SELECTEDVALUE (
+			    'Fact Pitcher Roster Fit'[target_starting_pitching_need_score]
+			)
+		lineageTag: 787b30bb-23ec-4c07-a252-b6d5c23445c0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Highest Pitching Role Need' =
+			
+			VAR StarterNeed =
+			    SELECTEDVALUE (
+			        'Fact Pitcher Roster Fit'[target_starting_pitching_need_score]
+			    )
+			VAR BullpenNeed =
+			    SELECTEDVALUE (
+			        'Fact Pitcher Roster Fit'[target_bullpen_need_score]
+			    )
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        ISBLANK ( StarterNeed ) || ISBLANK ( BullpenNeed ), BLANK (),
+			        StarterNeed > BullpenNeed, "Starter",
+			        BullpenNeed > StarterNeed, "Relief",
+			        "Swing"
+			    )
+		lineageTag: 6d842f18-4fc6-4e33-a7c6-4ac3816537e4
+
+	measure 'Pitcher Fit Bullpen Pitching Need' =
+			
+			SELECTEDVALUE (
+			    'Fact Pitcher Roster Fit'[target_bullpen_need_score]
+			)
+		lineageTag: 9af46760-c571-4e5a-8895-ef15a231ee2a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Pitcher Fit Tier Color' =
+			
+			SWITCH (
+			    SELECTEDVALUE ( 'Fact Pitcher Roster Fit'[fit_tier] ),
+			    "Excellent Fit", "#0B2E59",
+			    "Strong Fit", "#3F6FA6",
+			    "Moderate Fit", "#A9C5E8",
+			    "#D9E2F3"
+			)
+		lineageTag: ba81a63d-0fe3-4343-8a75-ec4ddcb9267c
+
+	measure 'Show Highest Need Pitcher Role' =
+			
+			VAR NeededRole =
+			    CALCULATE (
+			        [Highest Pitching Role Need],
+			        REMOVEFILTERS ( 'Fact Pitcher Roster Fit'[candidate_pitching_role] )
+			    )
+			VAR CandidateRole =
+			    SELECTEDVALUE ( 'Fact Pitcher Roster Fit'[candidate_pitching_role] )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( NeededRole )
+			            && CandidateRole = NeededRole,
+			        1,
+			        0
+			    )
+		formatString: 0
+		lineageTag: d0e87e94-28bb-484a-aa47-3027e24841e5
+
+	column player_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 9d42f9a6-d3d7-4847-8457-e64560451dcb
+		summarizeBy: sum
+		sourceColumn: player_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_name
+		dataType: string
+		lineageTag: 1eb937ad-e307-421c-98f4-89c8d07a9e45
+		summarizeBy: none
+		sourceColumn: player_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column season
+		dataType: int64
+		formatString: 0
+		lineageTag: e94abac4-3250-452b-adac-fd326cb34cbd
+		summarizeBy: sum
+		sourceColumn: season
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_source_team_id
+		dataType: int64
+		formatString: 0
+		lineageTag: d4db9b28-f965-4023-96a4-76ac2d38f2d0
+		summarizeBy: sum
+		sourceColumn: player_source_team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_source_team_name
+		dataType: string
+		lineageTag: 5ba5ece1-a1f7-4fc5-b054-32079779d9dd
+		summarizeBy: none
+		sourceColumn: player_source_team_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column candidate_pitching_role
+		dataType: string
+		lineageTag: b5db1612-81f3-49ae-b14a-714b84a768de
+		summarizeBy: none
+		sourceColumn: candidate_pitching_role
+
+		annotation SummarizationSetBy = Automatic
+
+	column candidate_innings_pitched
+		dataType: double
+		lineageTag: 9ce4ff48-fd4d-43fa-8fb9-9f8274c85d6f
+		summarizeBy: sum
+		sourceColumn: candidate_innings_pitched
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column candidate_era
+		dataType: double
+		lineageTag: dc758df7-008e-4cc0-b88d-c0b07866c72a
+		summarizeBy: sum
+		sourceColumn: candidate_era
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column candidate_whip
+		dataType: double
+		lineageTag: e316f915-bc39-46b6-aab3-0e3765cfb781
+		summarizeBy: sum
+		sourceColumn: candidate_whip
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column candidate_k_per_nine
+		dataType: double
+		lineageTag: ddebb700-f2c9-4fa5-b8bf-a0e17e012da5
+		summarizeBy: sum
+		sourceColumn: candidate_k_per_nine
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column candidate_games_pitched
+		dataType: int64
+		formatString: 0
+		lineageTag: 9fec4fa2-9805-4630-acd3-b379657e28d4
+		summarizeBy: sum
+		sourceColumn: candidate_games_pitched
+
+		annotation SummarizationSetBy = Automatic
+
+	column candidate_games_started
+		dataType: int64
+		formatString: 0
+		lineageTag: 7d90a650-57a0-4849-9a84-8dd0fdfeaea8
+		summarizeBy: sum
+		sourceColumn: candidate_games_started
+
+		annotation SummarizationSetBy = Automatic
+
+	column candidate_saves
+		dataType: int64
+		formatString: 0
+		lineageTag: 41428b0b-f8d6-4dc4-af0b-7f893db3c537
+		summarizeBy: sum
+		sourceColumn: candidate_saves
+
+		annotation SummarizationSetBy = Automatic
+
+	column candidate_holds
+		dataType: int64
+		formatString: 0
+		lineageTag: d4323546-af02-4cfc-894b-7cbf110a2a45
+		summarizeBy: sum
+		sourceColumn: candidate_holds
+
+		annotation SummarizationSetBy = Automatic
+
+	column era_performance_score
+		dataType: double
+		lineageTag: 1cd60a96-bf58-450a-90bf-c63da4d28763
+		summarizeBy: sum
+		sourceColumn: era_performance_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column whip_performance_score
+		dataType: double
+		lineageTag: b77958dd-4c0b-4b93-bf58-53c801d0ae40
+		summarizeBy: sum
+		sourceColumn: whip_performance_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column strikeout_rate_performance_score
+		dataType: double
+		lineageTag: 211462aa-0b2d-4855-81a7-11c4e2c20ed1
+		summarizeBy: sum
+		sourceColumn: strikeout_rate_performance_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pitcher_performance_score
+		dataType: double
+		lineageTag: 35fd606a-3d84-437d-8c48-9be0df8a00e8
+		summarizeBy: sum
+		sourceColumn: pitcher_performance_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column workload_context_score
+		dataType: double
+		lineageTag: 49c7dd11-2f2d-41b2-84bd-02efe297e0cf
+		summarizeBy: sum
+		sourceColumn: workload_context_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column target_team_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 3af4397a-6815-4373-9d5f-68febd116e9e
+		summarizeBy: none
+		sourceColumn: target_team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_team_name
+		dataType: string
+		lineageTag: 2790d2e9-bc82-4f62-91a8-830c140568fd
+		summarizeBy: none
+		sourceColumn: target_team_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_team_abbreviation
+		dataType: string
+		lineageTag: 8d0475d4-1ba2-4a77-aace-b44be36d4f4f
+		summarizeBy: none
+		sourceColumn: target_team_abbreviation
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_league_name
+		dataType: string
+		lineageTag: 0a6392e6-defd-418d-8647-06131882e820
+		summarizeBy: none
+		sourceColumn: target_league_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_division_name
+		dataType: string
+		lineageTag: 14b78c47-54e3-43ed-9932-1679c4012bf4
+		summarizeBy: none
+		sourceColumn: target_division_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_starting_pitching_need_score
+		dataType: double
+		lineageTag: 6611f7e8-06eb-44e7-af2c-ebf8dcaf986c
+		summarizeBy: sum
+		sourceColumn: target_starting_pitching_need_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column target_starting_pitching_need_level
+		dataType: string
+		lineageTag: dac22027-e6c9-4262-a4e3-de4048d94100
+		summarizeBy: none
+		sourceColumn: target_starting_pitching_need_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_bullpen_need_score
+		dataType: double
+		lineageTag: 941d5ee1-d96d-41b2-ad71-0228c2334733
+		summarizeBy: sum
+		sourceColumn: target_bullpen_need_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column target_bullpen_need_level
+		dataType: string
+		lineageTag: d7cbff1f-61c8-4de7-94ff-0be9ede80723
+		summarizeBy: none
+		sourceColumn: target_bullpen_need_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_overall_need_score
+		dataType: double
+		lineageTag: a11fdea6-71dd-4ad5-8e28-be0258fc4e7f
+		summarizeBy: sum
+		sourceColumn: target_overall_need_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column target_overall_need_level
+		dataType: string
+		lineageTag: 72b04146-eba4-401d-b2d2-310ca2da5bdb
+		summarizeBy: none
+		sourceColumn: target_overall_need_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_primary_need
+		dataType: string
+		lineageTag: 0092d321-19c1-4ea8-b57c-9fe9e8bb42c3
+		summarizeBy: none
+		sourceColumn: target_primary_need
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_on_target_team
+		dataType: string
+		lineageTag: c40a7fea-2eeb-4932-b09e-52ffe6ff8774
+		summarizeBy: none
+		sourceColumn: player_on_target_team
+
+		annotation SummarizationSetBy = Automatic
+
+	column role_aligned_need_score
+		dataType: double
+		lineageTag: 67f8b1be-a100-407d-8716-ae38e51f290d
+		summarizeBy: sum
+		sourceColumn: role_aligned_need_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column role_aligned_need_level
+		dataType: string
+		lineageTag: 58e3750a-d43f-4e2c-a756-17918b13e457
+		summarizeBy: none
+		sourceColumn: role_aligned_need_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column pitcher_roster_fit_score
+		dataType: double
+		lineageTag: 2cad9940-82f7-4d46-8420-ae468860d320
+		summarizeBy: sum
+		sourceColumn: pitcher_roster_fit_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fit_tier
+		dataType: string
+		lineageTag: 340bbc33-0e84-42f6-b517-d08fbde9405f
+		summarizeBy: none
+		sourceColumn: fit_tier
+
+		annotation SummarizationSetBy = Automatic
+
+	column fit_explanation
+		dataType: string
+		lineageTag: 47d031e9-a15b-4c5a-ae1c-5c53a6b55ca9
+		summarizeBy: none
+		sourceColumn: fit_explanation
+
+		annotation SummarizationSetBy = Automatic
+
+	column minimum_candidate_innings_pitched
+		dataType: int64
+		formatString: 0
+		lineageTag: 9a82759e-0d91-4e0d-beb6-9ea69bb375ee
+		summarizeBy: sum
+		sourceColumn: minimum_candidate_innings_pitched
+
+		annotation SummarizationSetBy = Automatic
+
+	column pitcher_performance_weight
+		dataType: double
+		lineageTag: a284d09b-9b94-456c-a7b6-47691bcd768f
+		summarizeBy: sum
+		sourceColumn: pitcher_performance_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column role_aligned_team_need_weight
+		dataType: double
+		lineageTag: 2280bc86-bbb5-4a94-b406-489e038c2d77
+		summarizeBy: sum
+		sourceColumn: role_aligned_team_need_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column workload_context_weight
+		dataType: double
+		lineageTag: eb9e9e53-31f3-4514-85e1-54fcc44a2682
+		summarizeBy: sum
+		sourceColumn: workload_context_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column era_performance_weight
+		dataType: double
+		lineageTag: 3376018e-e8af-4864-b4b7-d362e36d559c
+		summarizeBy: sum
+		sourceColumn: era_performance_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column whip_performance_weight
+		dataType: double
+		lineageTag: d54ef103-28b8-4af1-aabc-2e687ac57d9a
+		summarizeBy: sum
+		sourceColumn: whip_performance_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column strikeout_rate_performance_weight
+		dataType: double
+		lineageTag: d33ec463-ffe2-4cfd-b301-e4ae3bee5ae0
+		summarizeBy: sum
+		sourceColumn: strikeout_rate_performance_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Fact Pitcher Roster Fit' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\mwhitney\OneDrive - ESI\Desktop\GitHubPersonal\MLB-Project\MLB-Front-Office-Manager\Data\Processed\fact_pitcher_roster_fit_2025.csv"),[Delimiter=",", Columns=44, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"player_id", Int64.Type}, {"player_name", type text}, {"season", Int64.Type}, {"player_source_team_id", Int64.Type}, {"player_source_team_name", type text}, {"candidate_pitching_role", type text}, {"candidate_innings_pitched", type number}, {"candidate_era", type number}, {"candidate_whip", type number}, {"candidate_k_per_nine", type number}, {"candidate_games_pitched", Int64.Type}, {"candidate_games_started", Int64.Type}, {"candidate_saves", Int64.Type}, {"candidate_holds", Int64.Type}, {"era_performance_score", type number}, {"whip_performance_score", type number}, {"strikeout_rate_performance_score", type number}, {"pitcher_performance_score", type number}, {"workload_context_score", type number}, {"target_team_id", Int64.Type}, {"target_team_name", type text}, {"target_team_abbreviation", type text}, {"target_league_name", type text}, {"target_division_name", type text}, {"target_starting_pitching_need_score", type number}, {"target_starting_pitching_need_level", type text}, {"target_bullpen_need_score", type number}, {"target_bullpen_need_level", type text}, {"target_overall_need_score", type number}, {"target_overall_need_level", type text}, {"target_primary_need", type text}, {"player_on_target_team", type text}, {"role_aligned_need_score", type number}, {"role_aligned_need_level", type text}, {"pitcher_roster_fit_score", type number}, {"fit_tier", type text}, {"fit_explanation", type text}, {"minimum_candidate_innings_pitched", Int64.Type}, {"pitcher_performance_weight", type number}, {"role_aligned_team_need_weight", type number}, {"workload_context_weight", type number}, {"era_performance_weight", type number}, {"whip_performance_weight", type number}, {"strikeout_rate_performance_weight", type number}})
+				in
+				    #"Changed Type"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

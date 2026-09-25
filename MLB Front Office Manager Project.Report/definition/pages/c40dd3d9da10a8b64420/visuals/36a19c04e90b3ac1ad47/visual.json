@@ -1,0 +1,884 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "36a19c04e90b3ac1ad47",
+  "position": {
+    "x": 0,
+    "y": 329.23729738249091,
+    "z": 6000,
+    "height": 750.59503012585117,
+    "width": 1079.16289350779,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact Pitcher Roster Fit"
+                    }
+                  },
+                  "Property": "player_name"
+                }
+              },
+              "queryRef": "Fact Pitcher Roster Fit.player_name",
+              "nativeQueryRef": "Player Name",
+              "displayName": "Player Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact Pitcher Roster Fit"
+                    }
+                  },
+                  "Property": "player_source_team_name"
+                }
+              },
+              "queryRef": "Fact Pitcher Roster Fit.player_source_team_name",
+              "nativeQueryRef": "Player Current Team",
+              "displayName": "Player Current Team"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact Pitcher Roster Fit"
+                    }
+                  },
+                  "Property": "candidate_pitching_role"
+                }
+              },
+              "queryRef": "Fact Pitcher Roster Fit.candidate_pitching_role",
+              "nativeQueryRef": "Pitching Role",
+              "displayName": "Pitching Role"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact Pitcher Roster Fit"
+                        }
+                      },
+                      "Property": "candidate_era"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact Pitcher Roster Fit.candidate_era)",
+              "nativeQueryRef": "ERA",
+              "displayName": "ERA"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact Pitcher Roster Fit"
+                        }
+                      },
+                      "Property": "candidate_innings_pitched"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact Pitcher Roster Fit.candidate_innings_pitched)",
+              "nativeQueryRef": "IP",
+              "displayName": "IP"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact Pitcher Roster Fit"
+                        }
+                      },
+                      "Property": "candidate_k_per_nine"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact Pitcher Roster Fit.candidate_k_per_nine)",
+              "nativeQueryRef": "K/9",
+              "displayName": "K/9"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact Pitcher Roster Fit"
+                        }
+                      },
+                      "Property": "candidate_whip"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact Pitcher Roster Fit.candidate_whip)",
+              "nativeQueryRef": "WHIP",
+              "displayName": "WHIP"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact Pitcher Roster Fit"
+                        }
+                      },
+                      "Property": "pitcher_roster_fit_score"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact Pitcher Roster Fit.pitcher_roster_fit_score)",
+              "nativeQueryRef": "Roster Fit Score",
+              "displayName": "Roster Fit Score"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact Pitcher Roster Fit"
+                    }
+                  },
+                  "Property": "fit_tier"
+                }
+              },
+              "queryRef": "Fact Pitcher Roster Fit.fit_tier",
+              "nativeQueryRef": "Fit Tier",
+              "displayName": "Fit Tier"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Fact Pitcher Roster Fit"
+                      }
+                    },
+                    "Property": "candidate_innings_pitched"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "78.24402560365974D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Pitcher Roster Fit.candidate_era)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "86.2439903625905D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Pitcher Roster Fit.candidate_innings_pitched)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "84.75428465589087D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Pitcher Roster Fit.candidate_k_per_nine)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "85.28499074198999D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Pitcher Roster Fit.candidate_whip)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "139.91809425896338D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Pitcher Roster Fit.pitcher_roster_fit_score)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "114.75428161143412D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact Pitcher Roster Fit.fit_tier"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "155.38737607813252D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact Pitcher Roster Fit.player_name"
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Pitcher Roster Fit.candidate_era)"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Pitcher Roster Fit.candidate_innings_pitched)"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Pitcher Roster Fit.candidate_k_per_nine)"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Pitcher Roster Fit.candidate_whip)"
+          }
+        },
+        {
+          "properties": {
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact Pitcher Roster Fit.pitcher_roster_fit_score)"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top External Candidates for Highest-Need Pitching Role'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e47d0487daad70339867",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact Hitter Roster Fit"
+              }
+            },
+            "Property": "fit_tier"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "f129ea5b249e093691c7",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact Hitter Roster Fit"
+              }
+            },
+            "Property": "player_name"
+          }
+        },
+        "type": "TopN",
+        "howCreated": "User"
+      },
+      {
+        "name": "4bb3ff1f099647b70d8a",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact Hitter Roster Fit"
+              }
+            },
+            "Property": "player_position_name"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "64ae5ea8e80aa26ed080",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact Hitter Roster Fit"
+              }
+            },
+            "Property": "player_source_team_name"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "f3ec1454b7d7ddd713ce",
+        "ordinal": 4,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact Hitter Roster Fit"
+                  }
+                },
+                "Property": "player_ops"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "e13ba4e03469bc411d7c",
+        "ordinal": 5,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact Hitter Roster Fit"
+                  }
+                },
+                "Property": "player_plate_appearances"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "834493cc61d473e6736d",
+        "ordinal": 6,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact Hitter Roster Fit"
+                  }
+                },
+                "Property": "roster_fit_score"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "bb82a7b0eb7967330de1",
+        "ordinal": 7,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact Hitter Roster Fit"
+                  }
+                },
+                "Property": "target_position_need_score"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "18fc8fb9d8ea90b1ce3a",
+        "ordinal": 8,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact Pitcher Roster Fit"
+              }
+            },
+            "Property": "player_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "472074da89882ae5e503",
+        "ordinal": 9,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact Pitcher Roster Fit"
+              }
+            },
+            "Property": "player_source_team_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8badf135c27e18c869ac",
+        "ordinal": 10,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact Pitcher Roster Fit"
+              }
+            },
+            "Property": "candidate_pitching_role"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "620f3030a99a62803087",
+        "ordinal": 11,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact Pitcher Roster Fit"
+              }
+            },
+            "Property": "Show Highest Need Pitcher Role"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "Fact Pitcher Roster Fit",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "f"
+                        }
+                      },
+                      "Property": "Show Highest Need Pitcher Role"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "1L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "681db61a50070c639d33",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact Pitcher Roster Fit"
+                  }
+                },
+                "Property": "candidate_era"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c4a1949a5aadba752269",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact Pitcher Roster Fit"
+                  }
+                },
+                "Property": "candidate_innings_pitched"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "46a784b8014ee0825c76",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact Pitcher Roster Fit"
+                  }
+                },
+                "Property": "candidate_k_per_nine"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "37b0df06c60620dde158",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact Pitcher Roster Fit"
+                  }
+                },
+                "Property": "candidate_whip"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b357f70620522860eb20",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact Pitcher Roster Fit"
+                  }
+                },
+                "Property": "pitcher_roster_fit_score"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1030df6e7478ed5d5c50",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact Pitcher Roster Fit"
+              }
+            },
+            "Property": "fit_tier"
+          }
+        },
+        "type": "Categorical"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  }
+}

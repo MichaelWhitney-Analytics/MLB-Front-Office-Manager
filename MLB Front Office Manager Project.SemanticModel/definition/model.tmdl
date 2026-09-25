@@ -1,0 +1,26 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Dim Team","Fact Team Season","Fact Team Needs","Fact Team Position Needs","Fact Batting Player Team Season","Fact Pitching Player Team Season","Fact Hitter Roster Fit","Fact Pitcher Roster Fit"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Dim Team'
+ref table 'Fact Team Season'
+ref table 'Fact Team Needs'
+ref table 'Fact Team Position Needs'
+ref table 'Fact Batting Player Team Season'
+ref table 'Fact Pitching Player Team Season'
+ref table 'Fact Hitter Roster Fit'
+ref table 'Fact Pitcher Roster Fit'
+
+ref cultureInfo en-US
+

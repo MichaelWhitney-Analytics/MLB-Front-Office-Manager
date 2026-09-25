@@ -1,0 +1,28 @@
+relationship c8da03e4-0924-183e-1f08-f099c138ff4a
+	fromColumn: 'Fact Team Season'.team_id
+	toColumn: 'Dim Team'.team_id
+
+relationship 57890965-8d25-2188-fe35-bd13ab37de97
+	fromColumn: 'Fact Team Needs'.team_id
+	toColumn: 'Dim Team'.team_id
+
+relationship 8b22ffd3-b17f-0593-6cf5-43a461e2d9b3
+	fromColumn: 'Fact Team Position Needs'.team_id
+	toColumn: 'Dim Team'.team_id
+
+relationship c603e827-5b65-167a-9ed3-3cc53275b22b
+	fromColumn: 'Fact Batting Player Team Season'.team_id
+	toColumn: 'Dim Team'.team_id
+
+relationship a5ab9052-60f4-0f3e-7421-e82e6b516766
+	fromColumn: 'Fact Pitching Player Team Season'.team_id
+	toColumn: 'Dim Team'.team_id
+
+relationship 46c16a62-9af1-661a-96d2-3ad4940218a4
+	fromColumn: 'Fact Hitter Roster Fit'.target_team_id
+	toColumn: 'Dim Team'.team_id
+
+relationship 6a07bc6b-6ca3-dba2-055d-aca437aa8637
+	fromColumn: 'Fact Pitcher Roster Fit'.target_team_id
+	toColumn: 'Dim Team'.team_id
+

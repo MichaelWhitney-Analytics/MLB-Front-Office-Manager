@@ -1,0 +1,468 @@
+table 'Fact Pitching Player Team Season'
+	lineageTag: a1ff0627-8d8b-459a-ae6b-e33e3d5e16ed
+
+	column player_id
+		dataType: int64
+		formatString: 0
+		lineageTag: cde743bf-dcee-40e6-8433-bc77deee8fbd
+		summarizeBy: sum
+		sourceColumn: player_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_name
+		dataType: string
+		lineageTag: 733839c6-c5bd-445f-8744-d0dc1c206b3c
+		summarizeBy: none
+		sourceColumn: player_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 2d89c93b-df05-42d2-a0c4-d0062181996a
+		summarizeBy: none
+		sourceColumn: team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_name
+		dataType: string
+		lineageTag: c11c26b0-4854-46c3-8d88-f1e8c51664ed
+		summarizeBy: none
+		sourceColumn: team_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_team_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 9dc91d12-a7cd-4e6e-a890-0e4b12905c7a
+		summarizeBy: sum
+		sourceColumn: source_team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_team_name
+		dataType: string
+		lineageTag: 364b044d-84d9-4f70-8362-e0778d77116b
+		summarizeBy: none
+		sourceColumn: source_team_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column season
+		dataType: int64
+		formatString: 0
+		lineageTag: e7534a12-1735-4620-a006-f98e9a2de6b7
+		summarizeBy: sum
+		sourceColumn: season
+
+		annotation SummarizationSetBy = Automatic
+
+	column position_code
+		dataType: int64
+		formatString: 0
+		lineageTag: 0b031f38-77ed-414e-97e3-f6fe5a2056a9
+		summarizeBy: sum
+		sourceColumn: position_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column position_name
+		dataType: string
+		lineageTag: c97c4629-26c3-4798-b5a5-91ed1384f560
+		summarizeBy: none
+		sourceColumn: position_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column games_pitched
+		dataType: int64
+		formatString: 0
+		lineageTag: ed988183-b0c9-40a3-ac9f-6497a1a06b84
+		summarizeBy: sum
+		sourceColumn: games_pitched
+
+		annotation SummarizationSetBy = Automatic
+
+	column games_started
+		dataType: int64
+		formatString: 0
+		lineageTag: 407bdcc3-5cf4-495d-acc2-cdd89e8ae1b9
+		summarizeBy: sum
+		sourceColumn: games_started
+
+		annotation SummarizationSetBy = Automatic
+
+	column games_finished
+		dataType: int64
+		formatString: 0
+		lineageTag: dd9194b8-5a91-4420-b08e-88cd00983924
+		summarizeBy: sum
+		sourceColumn: games_finished
+
+		annotation SummarizationSetBy = Automatic
+
+	column complete_games
+		dataType: int64
+		formatString: 0
+		lineageTag: f5003c61-3ca8-4523-a3f8-a063ace6b947
+		summarizeBy: sum
+		sourceColumn: complete_games
+
+		annotation SummarizationSetBy = Automatic
+
+	column shutouts
+		dataType: int64
+		formatString: 0
+		lineageTag: ef18c3d3-a5c3-4806-853c-19365465e162
+		summarizeBy: sum
+		sourceColumn: shutouts
+
+		annotation SummarizationSetBy = Automatic
+
+	column wins
+		dataType: int64
+		formatString: 0
+		lineageTag: 35a6fc43-96fa-4876-8891-4551aa705ed3
+		summarizeBy: sum
+		sourceColumn: wins
+
+		annotation SummarizationSetBy = Automatic
+
+	column losses
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ab0d9f0-ec65-4792-9ad8-cef47474fc52
+		summarizeBy: sum
+		sourceColumn: losses
+
+		annotation SummarizationSetBy = Automatic
+
+	column saves
+		dataType: int64
+		formatString: 0
+		lineageTag: 6dbf34ea-0d8b-4851-9042-9cb5016d139a
+		summarizeBy: sum
+		sourceColumn: saves
+
+		annotation SummarizationSetBy = Automatic
+
+	column save_opportunities
+		dataType: int64
+		formatString: 0
+		lineageTag: cb15c2ed-d4ab-4de2-bde0-381ea4acd386
+		summarizeBy: sum
+		sourceColumn: save_opportunities
+
+		annotation SummarizationSetBy = Automatic
+
+	column holds
+		dataType: int64
+		formatString: 0
+		lineageTag: c60eada2-b3b3-4bda-98ad-443400cd0101
+		summarizeBy: sum
+		sourceColumn: holds
+
+		annotation SummarizationSetBy = Automatic
+
+	column blown_saves
+		dataType: int64
+		formatString: 0
+		lineageTag: 4ca3fb66-c959-48b7-9aa1-af7db71c3b84
+		summarizeBy: sum
+		sourceColumn: blown_saves
+
+		annotation SummarizationSetBy = Automatic
+
+	column innings_pitched_baseball
+		dataType: double
+		lineageTag: 122babed-8e2a-4688-83d8-b63064890051
+		summarizeBy: sum
+		sourceColumn: innings_pitched_baseball
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column hits_allowed
+		dataType: int64
+		formatString: 0
+		lineageTag: f3bb61e0-975e-4283-91a2-496e2f224e8a
+		summarizeBy: sum
+		sourceColumn: hits_allowed
+
+		annotation SummarizationSetBy = Automatic
+
+	column runs_allowed
+		dataType: int64
+		formatString: 0
+		lineageTag: f0f20483-1ffb-44c4-a63c-b88db7ad49f2
+		summarizeBy: sum
+		sourceColumn: runs_allowed
+
+		annotation SummarizationSetBy = Automatic
+
+	column earned_runs
+		dataType: int64
+		formatString: 0
+		lineageTag: 5ce2bde0-5305-4dca-8129-2abc740b7f06
+		summarizeBy: sum
+		sourceColumn: earned_runs
+
+		annotation SummarizationSetBy = Automatic
+
+	column home_runs_allowed
+		dataType: int64
+		formatString: 0
+		lineageTag: 97f3a6d3-c3a3-4226-8c51-4c917997316b
+		summarizeBy: sum
+		sourceColumn: home_runs_allowed
+
+		annotation SummarizationSetBy = Automatic
+
+	column base_on_balls
+		dataType: int64
+		formatString: 0
+		lineageTag: 85179bd5-3f37-4c4d-80bc-9fdddbd35351
+		summarizeBy: sum
+		sourceColumn: base_on_balls
+
+		annotation SummarizationSetBy = Automatic
+
+	column intentional_walks
+		dataType: int64
+		formatString: 0
+		lineageTag: 933e5869-f5e7-4fb4-8f74-394451e34861
+		summarizeBy: sum
+		sourceColumn: intentional_walks
+
+		annotation SummarizationSetBy = Automatic
+
+	column strikeouts
+		dataType: int64
+		formatString: 0
+		lineageTag: 0c247c8a-169e-4534-b5bd-f42bbdf9ca59
+		summarizeBy: sum
+		sourceColumn: strikeouts
+
+		annotation SummarizationSetBy = Automatic
+
+	column hit_batters
+		dataType: int64
+		formatString: 0
+		lineageTag: 33962214-3ccd-4fb3-9422-8aa031100260
+		summarizeBy: sum
+		sourceColumn: hit_batters
+
+		annotation SummarizationSetBy = Automatic
+
+	column batters_faced
+		dataType: int64
+		formatString: 0
+		lineageTag: 1ce819bb-e0a8-4e12-acca-eb00c7cc5d73
+		summarizeBy: sum
+		sourceColumn: batters_faced
+
+		annotation SummarizationSetBy = Automatic
+
+	column wild_pitches
+		dataType: int64
+		formatString: 0
+		lineageTag: 3afb16fd-d47d-43a5-ab7b-57569191da7c
+		summarizeBy: sum
+		sourceColumn: wild_pitches
+
+		annotation SummarizationSetBy = Automatic
+
+	column balks
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b7f7204-610e-492d-9404-ab91029ae744
+		summarizeBy: sum
+		sourceColumn: balks
+
+		annotation SummarizationSetBy = Automatic
+
+	column ground_outs
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e1e3bec-1a68-414c-abe8-25b22cbb1c29
+		summarizeBy: sum
+		sourceColumn: ground_outs
+
+		annotation SummarizationSetBy = Automatic
+
+	column air_outs
+		dataType: int64
+		formatString: 0
+		lineageTag: ae14b8db-92b2-4cd0-ae09-740aac2bb00a
+		summarizeBy: sum
+		sourceColumn: air_outs
+
+		annotation SummarizationSetBy = Automatic
+
+	column ground_into_double_play
+		dataType: int64
+		formatString: 0
+		lineageTag: 36f72e20-ee15-4a03-8e97-1f688ec6a924
+		summarizeBy: sum
+		sourceColumn: ground_into_double_play
+
+		annotation SummarizationSetBy = Automatic
+
+	column inherited_runners
+		dataType: int64
+		formatString: 0
+		lineageTag: b4f20c5f-5bed-467e-b405-ed7dec3b4b51
+		summarizeBy: sum
+		sourceColumn: inherited_runners
+
+		annotation SummarizationSetBy = Automatic
+
+	column inherited_runners_scored
+		dataType: int64
+		formatString: 0
+		lineageTag: 593f146c-cea2-404e-bdfb-7bc05d793a01
+		summarizeBy: sum
+		sourceColumn: inherited_runners_scored
+
+		annotation SummarizationSetBy = Automatic
+
+	column innings_pitched
+		dataType: double
+		lineageTag: 87470c0d-3830-44e1-8512-9be9f7a22bfb
+		summarizeBy: sum
+		sourceColumn: innings_pitched
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column earned_run_average
+		dataType: double
+		lineageTag: b7776e66-c234-4158-9a45-a2aea5055eb1
+		summarizeBy: sum
+		sourceColumn: earned_run_average
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column walks_and_hits_per_inning_pitched
+		dataType: double
+		lineageTag: 376ea132-9389-4e67-8c81-220bb9bca52a
+		summarizeBy: sum
+		sourceColumn: walks_and_hits_per_inning_pitched
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column strikeouts_per_nine
+		dataType: double
+		lineageTag: 3d30047f-cd69-4fe7-9ddd-d56c3981cd4f
+		summarizeBy: sum
+		sourceColumn: strikeouts_per_nine
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column walks_per_nine
+		dataType: double
+		lineageTag: b409d15d-6c30-4534-b754-41f485ac1bc9
+		summarizeBy: sum
+		sourceColumn: walks_per_nine
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column home_runs_per_nine
+		dataType: double
+		lineageTag: 3d031c30-08b8-4584-a852-4dcf649279bf
+		summarizeBy: sum
+		sourceColumn: home_runs_per_nine
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column strikeout_to_walk_ratio
+		dataType: double
+		lineageTag: aef00c4d-7188-4a71-b685-101204f1839f
+		summarizeBy: sum
+		sourceColumn: strikeout_to_walk_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column starter_appearance_percentage
+		dataType: double
+		lineageTag: 4f1fda37-f509-4085-9945-e15a9716e1c0
+		summarizeBy: sum
+		sourceColumn: starter_appearance_percentage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pitching_role
+		dataType: string
+		lineageTag: 33cfad4a-b19c-4e35-a266-1a792345e76e
+		summarizeBy: none
+		sourceColumn: pitching_role
+
+		annotation SummarizationSetBy = Automatic
+
+	column teams_played_for_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 6aa1f779-d5bd-4560-b580-9eb4b97e6d64
+		summarizeBy: sum
+		sourceColumn: teams_played_for_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column multiple_teams_flag
+		dataType: string
+		lineageTag: ea293673-9b5e-4b3d-8a38-2dfc6091b7cb
+		summarizeBy: none
+		sourceColumn: multiple_teams_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column roster_movement_flag
+		dataType: string
+		lineageTag: 77374fc6-f8f9-4497-9dbe-09a3a0972f4f
+		summarizeBy: none
+		sourceColumn: roster_movement_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_scope
+		dataType: string
+		lineageTag: 47323998-3ce0-4eba-b826-e86e1c713970
+		summarizeBy: none
+		sourceColumn: record_scope
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact Pitching Player Team Season' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\mwhitney\OneDrive - ESI\Desktop\GitHubPersonal\MLB-Project\MLB-Front-Office-Manager\Data\Processed\fact_pitching_player_team_season_2025.csv"),[Delimiter=",", Columns=50, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"player_id", Int64.Type}, {"player_name", type text}, {"team_id", Int64.Type}, {"team_name", type text}, {"source_team_id", Int64.Type}, {"source_team_name", type text}, {"season", Int64.Type}, {"position_code", Int64.Type}, {"position_name", type text}, {"games_pitched", Int64.Type}, {"games_started", Int64.Type}, {"games_finished", Int64.Type}, {"complete_games", Int64.Type}, {"shutouts", Int64.Type}, {"wins", Int64.Type}, {"losses", Int64.Type}, {"saves", Int64.Type}, {"save_opportunities", Int64.Type}, {"holds", Int64.Type}, {"blown_saves", Int64.Type}, {"innings_pitched_baseball", type number}, {"hits_allowed", Int64.Type}, {"runs_allowed", Int64.Type}, {"earned_runs", Int64.Type}, {"home_runs_allowed", Int64.Type}, {"base_on_balls", Int64.Type}, {"intentional_walks", Int64.Type}, {"strikeouts", Int64.Type}, {"hit_batters", Int64.Type}, {"batters_faced", Int64.Type}, {"wild_pitches", Int64.Type}, {"balks", Int64.Type}, {"ground_outs", Int64.Type}, {"air_outs", Int64.Type}, {"ground_into_double_play", Int64.Type}, {"inherited_runners", Int64.Type}, {"inherited_runners_scored", Int64.Type}, {"innings_pitched", type number}, {"earned_run_average", type number}, {"walks_and_hits_per_inning_pitched", type number}, {"strikeouts_per_nine", type number}, {"walks_per_nine", type number}, {"home_runs_per_nine", type number}, {"strikeout_to_walk_ratio", type number}, {"starter_appearance_percentage", type number}, {"pitching_role", type text}, {"teams_played_for_count", Int64.Type}, {"multiple_teams_flag", type text}, {"roster_movement_flag", type text}, {"record_scope", type text}})
+				in
+				    #"Changed Type"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+
