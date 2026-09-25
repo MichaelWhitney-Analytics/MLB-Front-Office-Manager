@@ -1,7 +1,9 @@
+# Power BI project: keep report and semantic model definitions,
+# but exclude machine-specific settings and cached data
 **/.pbi/localSettings.json
 **/.pbi/cache.abf
 
-# Power BI binary files and local backups
+# Power BI binary files and backups
 *.pbix
 *.pbit
 *.bak
@@ -9,10 +11,18 @@
 # Python virtual environments
 .venv/
 venv/
+env/
+
+# Python cache and test files
 __pycache__/
 *.py[cod]
+.pytest_cache/
 
-# Jupyter checkpoints
+# Environment variables and secrets
+.env
+*.env
+
+# Jupyter notebook checkpoints
 .ipynb_checkpoints/
 
 # Operating-system files
