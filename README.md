@@ -83,7 +83,7 @@ README.md
 
 **Current phase:** Four-page Power BI report completed; final repository documentation and validation in progress.
 
-## Limitations
+## Limitations 
 
 - The analysis uses the data and season represented in the project; it is not a live roster or transaction feed.
 - Roster-fit scores are decision-support indicators, not predictions of a player's future performance.
